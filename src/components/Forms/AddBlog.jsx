@@ -8,7 +8,10 @@ import { Link} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const AddBlog = () => {
+
+
 
   const schema = yup.object().shape({
     title:yup.string().required(),
@@ -29,6 +32,7 @@ const submit = async (data) => {
     const url = "https://blogapi-se2j.onrender.com/api/v1/blogs"
     const res = await axios.post(url, formData);
     toast.success('blog was created successfully')
+    window.location.reload()
   } catch(err){
     console.log(err);
   }
@@ -38,6 +42,7 @@ const submit = async (data) => {
   return (
     <>
     <ToastContainer />
+    
       <Link to="/BlogDashboard">
         <div className="mx-5 my-5 bg-black rounded text-white w-9 p-2">
           <FaArrowLeft />
@@ -60,9 +65,9 @@ const submit = async (data) => {
                 id="image"
                 className="shadow-xxl bg-gray-100 px-2 rounded outline-none text-sm  text-sans w-full "
                 {...register("image")}
-               
-             
+              
               />
+            
             </div>
 
             <div className="mx-5 my-5">

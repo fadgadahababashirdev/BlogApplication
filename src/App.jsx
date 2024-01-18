@@ -15,6 +15,7 @@ import BlogTable from './components/BlogTable'
 
 const App = () => {
   const [blog, setBlog] = useState([]);
+
   useEffect(()=>{
     const blos = async()=>{
       try {
