@@ -1,0 +1,62 @@
+.chambuwa{
+    animation-name: move-right;
+    animation-duration: 1.3s;
+   
+}
+.Login{
+    background-image: url("../../public/images/backgroundLogin.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+
+}
+.colorado{
+    font-size: 12px;
+    width: 730px;
+    
+}
+.colorado input[type="text"]{
+    width:350px;
+    height:1.5rem;
+    border-radius:5px ;
+    outline:none;
+    
+}
+.colorado input[type="email"]{
+    width:350px;
+    height:1.5rem;
+    border-radius:5px ;
+    outline:none;
+    
+}
+
+.colorado input[type="tel"]{
+    width:350px;
+    height:1.5rem;
+    border-radius:5px ;
+    outline:none;
+    
+}
+.colorado input[type="password"]{
+    width:350px;
+    height:1.5rem;
+    border-radius:5px ;
+    outline: none;
+    
+}
+
+@keyframes move-right{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100px);
+    }
+}
+
+@media only screen  and (max-width:576px) {
+    .kalibara{
+        display: block;
+    }
+}
