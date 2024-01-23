@@ -11,43 +11,31 @@ const Blog = () => {
   const {blog} = useContext(BlogContext)
 
   return (
-    <div className="container bg-white-500 mx-auto w-full py-4 px-12 ">
-      <div className=" flex kalibara">
-        <div>
-          <div className="w-3/16">
-            <hr className="bg-black h-1 w-2/3" />
-            <span className="bg-black text-white text-3xl">BLOG</span>
-            <div>
-              {blog.map((singleBlog) => {
-                return (
-                  <div className="w-75 mt-10 flex " key={singleBlog._id}>
-                    <img
-                      src={singleBlog.image}
-                      alt="image one description"
-                      className="h-56 w-56 mt-3 font-mono"
-                    />
-                    <div className="mx-3  mt-5 ">
-                      <h1 className="text-lg  ">{singleBlog.title}</h1>
-                      <p className="text-xs text-sans text-gray-500 font-sans mt-5">
-                        {singleBlog.body}
-                      </p>
-                      <div className="flex justify-between">
-                        <Link to={`${singleBlog.id}`}>
-                          <button className="bg-blue-300  rounded-sm text-center text-xs p-1 mt-10">
-                            Explore More
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+    <div className="container bg-white-500 mx-auto w-full py-4 px-12">
+    <div className="flex flex-wrap -mx-4 kalibara">
+      {blog.map((singleBlog) => (
+        <div key={singleBlog._id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-4 mt-4">
+          <img
+            src={singleBlog.image}
+            alt="image one description"
+            className="h-56 w-full object-cover rounded"
+          />
+          <div className="mt-3">
+            <h1 className="text-lg font-bold">{singleBlog.title}</h1>
+            <p className="text-sm text-gray-500 mt-2">{singleBlog.body}</p>
+            <div className="flex justify-end mt-3">
+              <Link to={`${singleBlog.id}`}>
+                <button className="bg-blue-300 rounded-sm text-center text-xs p-1">
+                  Explore More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
-        {/* deleted div  */}
-      </div>
+      ))}
     </div>
+  </div>
+  
   );
 };
 
