@@ -8,8 +8,8 @@ const Eachblog = () => {
      const {blog} = useContext(BlogContext)
     
     const { blogId } = useParams();
-    const single = blog.find(blog => blog.id === blogId)
-    console.log(single);
+    const single = blog.find(blog => blog._id === blogId)
+    
 
 
   return (
