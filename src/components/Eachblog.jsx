@@ -6,9 +6,9 @@ import { BlogContext } from './Context/BlogContext';
 
 const Eachblog = () => {
      const {blog} = useContext(BlogContext)
-     console.log(blog)
+    
     const { blogId } = useParams();
-    const single = blog.find(blog => blog.id == blogId)
+    const single = blog.find(blog => blog.id === blogId)
     console.log(single);
 
 

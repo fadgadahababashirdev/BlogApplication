@@ -44,47 +44,10 @@ const BlogDashboard = () => {
                                             </div>
                                 </div>
 
-                                <div className="mt-8">
-                                <table className="border  bg-white"style={{width:'850px'}}>
-                                <thead>
-                                    <tr>
-                                    
-                                    <th className="py-2 px-4 border-b">Blog Image</th>
-                                    <th className="py-2 px-4 border-b">Blog Description</th>
-                                    <th className="py-2 px-4 border-b">Blog Title</th>
-                                    <th className="py-2 px-4 border-b">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                
-
-                                    {blog.map((singleBlog, index)=>{
-                                        return (
-                                            <tr key={index}>
-                                                
-                                                    <td className="py-2 px-4 mr-2 border-b text-center text-sm font-thin" style={{ width: '150px' }}>{singleBlog.image}</td>
-
-                                                    <td className="py-2 px-4 border-b text-center text-sm font-thin"style={{width:'54px'}}>{singleBlog.description}</td>
-                                                    <td className="py-2 px-4 border-b text-center font-thin">{singleBlog.title}</td>
-                                                    <td className="py-2 px-4 border-b  text-center font-thin">
-                                                    <button className="bg-blue-500 text-white py-1 px-2 rounded-full mr-2 font-thin w-20 m-2">Edit</button>
-                                                    <button className="bg-red-500 text-white py-1 px-2 rounded-full font-thin w-20 m-2"
-                                                    onClick ={()=>handleDelete(singleBlog._id)}
-                                                    >Delete</button>
-                                                    </td>
-                                            </tr>
-                                        )
-                                    })}
-                                
-
-
-                                    {/* Add more rows as needed */}
-                                </tbody>
-                                </table>
   </div>
        </div>
 
-  </div>
+  
   )
 }
 

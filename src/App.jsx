@@ -22,7 +22,7 @@ const App = () => {
         const response = await fetch("https://blogapi-se2j.onrender.com/api/v1/blogs")
         const jsonify = await response.json()
         setBlog(jsonify.blogs)
-        console.log(jsonify)
+        
       } catch (error) {
         console.log(error)
       }

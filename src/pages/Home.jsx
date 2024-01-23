@@ -5,6 +5,7 @@ import Creative from '../components/Creative'
 import Blog from '../components/Blog'
 import Footer from '../components/Footer'
 import { BlogContext } from '../components/Context/BlogContext'
+import Register from '../components/Register'
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
         <Creative/>
         <Blog/>
         <Footer/>
+
         
       
        

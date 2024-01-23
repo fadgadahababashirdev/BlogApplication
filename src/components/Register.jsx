@@ -1,16 +1,48 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
+import * as yup from 'yup'
 import {Link} from 'react-router-dom'
 import Navbar from './Navbar'
+import axios from 'axios'
+import { ToastContainer,toast } from 'react-toastify'
+import { yupResolver } from '@hookform/resolvers/yup'
 // import {useState,useRef,useEffect} from 'react'
 const Register = () => {
-const {register,handleSubmit} = useForm()
-const submit = (data)=>{
-    console.log(data)
+const schema = yup.object().shape({
+    email:yup.string().email("Email is required").required(),
+    username:yup.string().required(),
+    telephone:yup.number().required().positive().min(10).typeError("That does not look like a number").integer(),
+    password:yup.string().required().min(6).max(30),
+    confirmpassword:yup.string().oneOf([yup.ref('password'),null]).required()
+
+
+
+})
+
+const {register,handleSubmit,formState : {errors}} = useForm({
+    resolver:yupResolver
+})
+const submit = (data)=>{  async()=>{
+        const formData  = new FormData();
+        formData.append('email',data.email);
+        formData.append('username',data.username);
+        formData.append('telephone',data.telephone);
+        formData.append('password',data.password);
+         try {
+            const url = "https://blogapi-se2j.onrender.com/api/v1/users"
+            const res = await axios.post(url, formData);
+            console.log(res)
+
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
   return (
     <div>
         <Navbar/>
+        <ToastContainer/>
         <div className = "Login flex justify-between text-white py-12">
         <div className='leading-tight py-12 px-5'>
             <h1 className='font-mono text-6xl text '>Welcome At Fashionova</h1>
@@ -28,7 +60,7 @@ const submit = (data)=>{
            <div className='my-3'> 
 
                 <label htmlFor="Email">Email Adress</label><br/>
-                <input type="email" id="Email" 
+                <input type="email"
                     placeholder='Email Address'
                     {...register("email")}
                     className='pl-3 text-black'
@@ -40,7 +72,7 @@ const submit = (data)=>{
             <div className='my-3'> 
 
                 <label htmlFor="Username">Username</label><br/>
-                <input type="text" id="Username"
+                <input type="text" 
                     placeholder='Username'
                     {...register("username")}
                     className='pl-3 text-black'
@@ -60,7 +92,7 @@ const submit = (data)=>{
 
            <div className='my-3'>
                     <label htmlFor="password">Password</label><br/>
-                    <input type="password" id="password"
+                    <input type="password"
                         placeholder='Password'
                         {...register("password")}
                         className='pl-3 text-black'
@@ -69,9 +101,9 @@ const submit = (data)=>{
            </div>
            <div className='my-3'>
                     <label htmlFor="Confirm password">Confirm password</label><br/>
-                    <input type="password" id="password"
+                    <input type="password" 
                         placeholder='Confirm password'
-                        {...register("confirm password")}
+                        {...register("confirmpassword")}
                         className='pl-3 text-black'
                     
                      />
