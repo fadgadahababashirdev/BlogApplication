@@ -21,6 +21,7 @@ const BlogDashboard = () => {
                 <aside className='w-32 bg-blue-500 mt-3 h-screen'>
                     <Link to ="/AddBlog" > <div className='text-white  mx-3 pt-3'>Create Blog</div></Link>
                     <Link to ="/BlogTable">  <div className='text-white  mx-3 pt-3'>Edit Blog</div></Link>
+                    <Link to ="/">  <div className='text-white  mx-3 pt-3'>Back</div></Link>
 
                 </aside>
 

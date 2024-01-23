@@ -22,9 +22,9 @@ const Blog = () => {
           />
           <div className="mt-3">
             <h1 className="text-lg font-bold">{singleBlog.title}</h1>
-            <p className="text-sm text-gray-500 mt-2">{singleBlog.body}</p>
+            <p className="text-sm text-gray-500 mt-2">{singleBlog.description}</p>
             <div className="flex justify-end mt-3">
-              <Link to={`${singleBlog.id}`}>
+              <Link to={`${singleBlog._id}`}>
                 <button className="bg-blue-300 rounded-sm text-center text-xs p-1">
                   Explore More
                 </button>

@@ -7,7 +7,7 @@ const Navbar = () => {
         <div ><h1 className='hello-fashion'>Fan Fashion</h1></div>
         <ul className='flex justify-between'>
            <Link to="/"><li className='mx-2 hello-fashion font-sans'>Blog</li></Link>
-            <li  className='mx-2 hello-fashion  font-sans'>Fashion</li>
+           <Link to="/BlogDashboard"><li className='mx-2 hello-fashion font-sans'>Operations</li></Link>
             <li  className='mx-2 hello-fashion  font-sans'>Family</li>
             <li  className='mx-2 hello-fashion  font-sans'>Holiday</li>
             <li  className='mx-2 hello-fashion  font-sans'>Fashion</li>
@@ -15,6 +15,7 @@ const Navbar = () => {
         </ul>
 
         <div>
+           <Link to="/AddBlog"> <span className='mx-2 hello-fashion  font-sans'>Create Blog</span></Link>
            <Link to="/LoginPage"> <span className='mx-2 hello-fashion  font-sans'>Login</span></Link>
            <Link to="/Register"> <span className='mx-2 hello-fashion  font-sans'>SignUp</span></Link>
         </div>

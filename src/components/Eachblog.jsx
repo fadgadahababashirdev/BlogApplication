@@ -8,18 +8,18 @@ const Eachblog = () => {
      const {blog} = useContext(BlogContext)
     
     const { blogId } = useParams();
-    const single = blog.find(blog => blog._id === blogId)
+    const single = blog.find(blog => blog._id == blogId)
     
 
 
   return (
     <div>
         <Navbar/>
-        <div className='bg-white shadow-2xl rounded mx-10  flex my-32 '>
+        <div className='bg-white shadow-2xl rounded mx-10  block my-32 '>
             <img src={single.image} alt="" />
             <div >
                <h3 className='mx-3'>{single.title}</h3>
-               <p className='mx-3 text-sans text-sm text-gray-500 my-10'>{single.body}</p>
+               <p className='mx-3 text-sans text-sm text-gray-500 my-10'>{single.description}</p>
             </div>
             </div>
     </div>

@@ -43,7 +43,7 @@ const submit = async (data) => {
     <>
     <ToastContainer />
     
-      <Link to="/BlogDashboard">
+      <Link to="/">
         <div className="mx-5 my-5 bg-black rounded text-white w-9 p-2">
           <FaArrowLeft />
         </div>
